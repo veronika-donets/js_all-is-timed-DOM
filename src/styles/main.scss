@@ -1,3 +1,15 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+#timer {
+  max-width: max-content;
+  margin: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
