@@ -1,14 +1,11 @@
 'use strict';
 
-if (!localStorage.hasOwnProperty('clickAmount')) {
-  localStorage.setItem('spentTime', 0);
-}
-
-document.getElementById('timer').innerHTML
-  = `You spent ${localStorage.spentTime} sec on current page`;
+let counter = localStorage.getItem('spentTime') || 0;
+const time = document.getElementById('timer');
+time.innerHTML = `You spent ${counter} sec on current page`;
 
 setInterval(function() {
-  localStorage.spentTime++;
-  document.getElementById('timer').innerHTML
-    = `You spent ${localStorage.spentTime} sec on current page`;
+  counter++;
+  localStorage.setItem('spentTime', counter);
+  time.innerHTML = `You spent ${counter} sec on current page`;
 }, 1000);
